@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Live Outdoors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tent"></span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#what">WHAT</a></li>
+          <li><a href="#why">WHY</a></li>
+          <li><a href="#where">WHERE</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- First Container -->
+  <div class="container-fluid bg-1 text-center">
+    <h3 class="margin" id="brand">Live Outdoors</h3>
+    <img src="mtn_logo.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Logo" width="200" height="200">
+    <h3 id="slogan">It's Your Land, Live On It.</h3>
+  </div>
+
+  <!-- Second Container #what-->
+  <div id="what" class="container-fluid bg-3 text-center">
+    <h3 class="margin">What Is Live Outdoors?</h3>
+    <p class="margin">We help you achieve your goal of living full time on our country's public lands. We'll turn you into a modern nomad, just tell us how long you plan to be mobile and where you'd like to go - let us do all the planning. We know that it's hard to foresee the future so if your trip plans get interrupted, Live Outdoors is here to help you along the way.</p>
+    <a href="#where">
+    <!-- <span class="glyphicon glyphicon-search"></span> Search -->
+    <button id="link-button" type="text" name="button">SEARCH</button>
+  </a>
+  </div>
+
+  <!-- Third Container #why-->
+  <div id="why" class="container-fluid bg-2 text-center">
+    <h3 class="margin">Why Use Live Outdoors?</h3>
+    <p class="margin">Whether you want to live off the grid, save some money to buy that dream home, or craving more adventure in retirement, it's time for you to Live Outdoors.</p>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <h4>"I always take my spayed and neutered pets traveling with Live Outdoors!"<br><span>Bob Barker, Host, The Price Is Right</span></h4>
+    </div>
+    <div class="item">
+      <h4>"The tribe has spoken...Live Outdoors is here to stay"<br><span>Jeff Probst, Host, Survivor</span></h4>
+    </div>
+    <div class="item">
+      <h4>"America, this is the best way to see your country before Trump destroys it."<br><span>Stephen Colbert, Host, The Late Show With Stephen Colbert</span></h4>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  </div>
+
+  <!-- Fourth Container #search #where-->
+  <div id="where" id="search" class="container-fluid bg-3 text-center">
+    <h3 class="margin">Find Your Spot</h3>
+    <!-- Search Container -->
+    <label>Browse parks and rec areas by state:
+<!-- <input id="search-criteria" list="states" name="" placeholder="choose a state"/> -->
+</label>
+    <select id="search-criteria" name="states">
+  <option value=->-</option>
+  <option value=AL>AL</option>
+  <option value=AK>AK</option>
+  <option value=AZ>AZ</option>
+  <option value=AR>AR</option>
+  <option value=CA>CA</option>
+  <option value=CO>CO</option>
+  <option value=CT>CT</option>
+  <option value=DE>DE</option>
+  <option value=FL>FL</option>
+  <option value=GA>GA</option>
+  <option value=HI>HI</option>
+  <option value=ID>ID</option>
+  <option value=IL>IL</option>
+  <option value=IN>IN</option>
+  <option value=IA>IA</option>
+  <option value=KS>KS</option>
+  <option value=KY>KY</option>
+  <option value=LA>LA</option>
+  <option value=ME>ME</option>
+  <option value=MD>MD</option>
+  <option value=MA>MA</option>
+  <option value=MI>MI</option>
+  <option value=MN>MN</option>
+  <option value=MS>MS</option>
+  <option value=MO>MO</option>
+  <option value=MT>MT</option>
+  <option value=NE>NE</option>
+  <option value=NV>NV</option>
+  <option value=NH>NH</option>
+  <option value=NJ>NJ</option>
+  <option value=NM>NM</option>
+  <option value=NY>NY</option>
+  <option value=NC>NC</option>
+  <option value=ND>ND</option>
+  <option value=OH>OH</option>
+  <option value=OK>OK</option>
+  <option value=OR>OR</option>
+  <option value=PA>PA</option>
+  <option value=RI>RI</option>
+  <option value=SC>SC</option>
+  <option value=SD>SD</option>
+  <option value=TN>TN</option>
+  <option value=TX>TX</option>
+  <option value=UT>UT</option>
+  <option value=VT>VT</option>
+  <option value=VA>VA</option>
+  <option value=WA>WA</option>
+  <option value=WV>WV</option>
+  <option value=WI>WI</option>
+  <option value=WY>WY</option>
+</select><br/>
+    <button id="search-button" type="submit" name="button">SUBMIT</button>
+    <button id="clear-button" type="reset" name="button">CLEAR</button>
+  </div>
+
+  <!-- Results Container -->
+  <div id="results" class="container-fluid bg-2 text-center"></div>
+
+  <!-- Contact Container -->
+  <div id="contact" class="container-fluid bg-1 text-center">
+    <h3 class="text-center">CONTACT</h3>
+    <br/>
+    <div class="row margin">
+      <div class="col-sm-5">
+        <p>Contact us and we'll get back to you within 24 hours.</p>
+        <p><span class="glyphicon glyphicon-map-marker"></span> Boulder, US</p>
+        <p><span class="glyphicon glyphicon-phone"></span> +00 8675309</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> gurus@liveoutside.com</p>
+      </div>
+      <div class="col-sm-7 slideanim">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          </div>
+        </div>
+        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <button id="send-button" class="btn btn-default pull-right" type="submit">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid bg-4 text-center">
+    <p>&copy 2017 Live Outdoors</p>
+  </footer>
+
+</body>
+
+</html>
