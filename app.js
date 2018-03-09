@@ -43,7 +43,11 @@ $('document').ready(function() {
         let imgAlt = results.data[i].images[0].altText
         let imgTitle = results.data[i].images[0].title
 
-        $(`#results`).append(`<div class="container-fluid"> <div class="thumbnail"> <img src="${imgURL}" alt="${imgAlt}"> </div> <div class="caption"> ${imgTitle}: <br/> ${caption} </div> <br/> <h3> ${name} </h3> <p> ${description} </p> <a href="${parkURL}" class="btn btn-default" role="button" target="_blank"> Learn More! </a> </div>`)
+        // $(`#results`).append(`<div class="container-fluid"> <div class="thumbnail"> <img src="${imgURL}" alt="${imgAlt}"> </div> <div class="caption"> ${imgTitle}: <br/> ${caption} </div> <br/> <h3> ${name} </h3> <p> ${description} </p> <a href="${parkURL}" class="btn btn-default" role="button" target="_blank"> Learn More! </a> </div>`)
+
+        $(`#results`).append(`<div class="container-fluid"> <div class="thumbnail"> <img src="${imgURL}" alt="${imgAlt}"> </div> <div class="caption"> ${imgTitle}: <br/> ${caption} </div> <br/> <h3> ${name} </h3> <p> ${description} </p> <div class="btn-group">
+        <a href="${parkURL}" class="btn btn-default" role="button" target="_blank">Learn More!</a> <button type="button" class="btn btn-default">Favorite</button> </div> </div>`)
+
 
       }
 
