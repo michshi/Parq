@@ -1,17 +1,16 @@
 $('document').ready(function() {
 
   // click handler for search button
-
   $('#search-button').on('click', function() {
 
     // .getJSON request
-
     const query = $('#search-criteria').val()
     console.log('VALUE: ', query)
     if (query === '-') {
       alert('Please select a state')
     }
 
+    // store the url in a variable with api key and params
     var url = `https://developer.nps.gov/api/v1/parks?stateCode=${query}&fields=images&api_key=rxttxjVYI5gSXDiMoxo3eHnANZZ48dfVFbXY4V7s`
 
     var $xhr = $.getJSON(url)
@@ -25,7 +24,6 @@ $('document').ready(function() {
       })
 
       // display the results
-
       for (let i = 0; i < results.data.length; i++) {
 
         let name = results.data[i].fullName
@@ -55,12 +53,12 @@ $('document').ready(function() {
 
     })
 
+    //show that sexy div
     $('#results').show()
 
   })
 
   // clear button event listener
-
   $('#clear-button').on('click', function() {
     $('#results').empty();
     $('#results').hide(1000);
