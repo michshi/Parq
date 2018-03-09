@@ -1,58 +1,57 @@
 $('document').ready(function() {
-  console.log('JS is connected');
+  console.log('JS is connected')
 
-  // TODO: add click handler to search button
+  // click handler for search button
 
   $('#search-button').on('click', function() {
-    $('#results').show();
+    $('#results').show()
 
-    // TODO: write .getJSON request
+    // .getJSON request
 
-    var query = $('#search-criteria').val();
-    console.log('VALUE: ', query);
+    const query = $('#search-criteria').val()
+    console.log('VALUE: ', query)
     if (query === '-') {
-      alert('Please select a state');
+      alert('Please select a state')
     }
 
-    var url = `https://developer.nps.gov/api/v1/parks?stateCode=${query}&api_key=rxttxjVYI5gSXDiMoxo3eHnANZZ48dfVFbXY4V7s`;
+    var url = `https://developer.nps.gov/api/v1/parks?stateCode=${query}&fields=images&api_key=rxttxjVYI5gSXDiMoxo3eHnANZZ48dfVFbXY4V7s`
 
-    var $xhr = $.getJSON(url);
+    var $xhr = $.getJSON(url)
     $xhr.done(function(results) {
 
       if ($xhr.status !== 200) {
-        return;
+        return
       }
-      console.log('RESULTS: ', results.data);
+      console.log('RESULTS: ', results.data)
       $xhr.fail(function(err) {
-        console.log(err);
-      });
+        console.log(err)
+      })
 
-      // TODO: display the results
+      // display the results
 
-      for (var i = 0; i < results.data.length; i++) {
-        // if (query === '-') {
-        //   alert('Please select a state');
-        //   $('#results'.hide());
-        //   break;}
+      for (let i = 0; i < results.data.length; i++) {
 
-        var name = results.data[i].fullName;
+        let name = results.data[i].fullName
 
-        var description = results.data[i].description;
+        let description = results.data[i].description
 
-        var weather = results.data[i].weatherInfo;
+        let parkURL = results.data[i].url
 
-        // $('#results').append('<p>' + name + ': ' + '<br/>' + description + '</p>' + '<br/>');
+        let caption = results.data[i].images[0].caption
 
-        // $('#results').append('<p>' + name + ': ' + '<br/>' + description + '<div>' + weather + '<div>' + '</p>' + '<br/>');
+        let imgURL = results.data[i].images[0].url
+        let imgAlt = results.data[i].images[0].altText
+        let imgTitle = results.data[i].images[0].title
 
-        $('#results').append('<p>' + '<ul>' + name + ': ' + '<br/>' + '<li>' + description + '</li>' + '<br/>' + '<li>' + weather + '</li>' + '</ul>' + '</p>' + '<br/>');
+        $(`#results`).append(`<div class="container-fluid"> <div class="thumbnail"> <img src="${imgURL}" alt="${imgAlt}"> </div> <div class="caption"> ${imgTitle}: <br/> ${caption} </div> <br/> <h3> ${name} </h3> <p> ${description} </p> <a href="${parkURL}" class="btn btn-default" role="button" target="_blank"> Learn More! </a> </div>`)
+
       }
 
-    });
+    })
 
-  });
+  })
 
-  // TODO: add clear button event listener
+  // clear button event listener
 
   $('#clear-button').on('click', function() {
     $('#results').empty();
