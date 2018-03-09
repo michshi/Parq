@@ -4,7 +4,6 @@ $('document').ready(function() {
   // click handler for search button
 
   $('#search-button').on('click', function() {
-    $('#results').show()
 
     // .getJSON request
 
@@ -48,15 +47,16 @@ $('document').ready(function() {
 
       }
 
-      // favorite button event handler
-      $('.favorite').click(function(){
-      $(this).toggleClass('btn-default btn-danger')
+      // favorite button event handler + results.data to localStorage
+      // TODO: when user clicks to unfavorite, remove results.data from localStorage
+
+      $('.favorite').click(function() {
+        // localStorage.setItem('favoriteParks', JSON.stringify(results.data.fullName))
+        $(this).toggleClass('btn-default btn-danger')
       })
 
-      // TODO: Store "favorites" in local storage
-
     })
-
+    $('#results').show()
   })
 
   // clear button event listener
