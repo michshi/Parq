@@ -5,7 +5,6 @@ $('document').ready(function() {
 
     // .getJSON request
     const query = $('#search-criteria').val()
-    console.log('VALUE: ', query)
     if (query === '-') {
       alert('Please select a state')
     }
@@ -19,9 +18,7 @@ $('document').ready(function() {
       if ($xhr.status !== 200) {
         return
       }
-      console.log('RESULTS: ', results.data)
-      $xhr.fail(function(err) {
-      })
+      $xhr.fail(function(err) {})
 
       // display the results
       for (let i = 0; i < results.data.length; i++) {
@@ -71,36 +68,33 @@ $('document').ready(function() {
     let favorites = JSON.parse(localStorage.getItem('favorites') || '[]')
 
     let found = false
-    for(let i=0; i<favorites.length; i++) {
-      if(favorites[i].id === myId) {
+    for (let i = 0; i < favorites.length; i++) {
+      if (favorites[i].id === myId) {
         found = true
       }
     }
 
     // push on a new object representing a park, into the array
-    if(!found) {
+    if (!found) {
       favorites.push({
         parkCode: myId,
         fullName: myPark
       })
 
+      // save to local storage
+      localStorage.setItem('favorites', JSON.stringify(favorites))
 
-    // save to local storage
-    localStorage.setItem('favorites', JSON.stringify(favorites))
     }
 
   }
 
   // remove from local storage
   let favsArr = JSON.parse(localStorage.getItem('favorites') || '[]')
-  for(let i=0; i<favsArr.length; i++) {
-    if(favsArr[i].id === data.results[i].fullName) {
+  for (let i = 0; i < favsArr.length; i++) {
+    if (favsArr[i].id === data.results[i].fullName) {
       favsArr.splice(i, 1)
     }
   }
-
-
-
 
   // TODO: add media query to set max size
 
